@@ -49,3 +49,20 @@ swagger2访问地址:
 http://localhost:8110/swagger-ui.html
 ```
 
+# 3.启动系统
+
+## 3.1 启动MySQL
+
+```bash
+输入 cmd
+按快捷键 Ctrl + Shift + Enter 进入管理员模式
+net start MySQL5.7.36
+```
+
+## 3.2 启动后端模块
+
+```bash
+#service-core模块
+service-core/src/main/java/com/zmj/srb/core/ServiceCoreApplication.java
+```
+
