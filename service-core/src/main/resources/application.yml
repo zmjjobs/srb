@@ -3,7 +3,9 @@ server:
 
 spring:
   profiles:
-    active: dev # 环境设置
+    active: dev # 开发设置
+    #active: prod # 生产环境
+    #active: test # 测试环境
   application:
     name: service-core # 服务名
   datasource: # mysql数据库连接

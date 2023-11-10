@@ -9,6 +9,7 @@ import com.zmj.srb.core.service.IntegralGradeService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,6 +26,7 @@ import java.util.List;
 @Api(tags="积分等级管理")
 @CrossOrigin //自动跨域
 @RestController
+@Slf4j
 @RequestMapping("/admin/core/integralGrade")
 public class AdminIntegralGradeController {
 
@@ -72,6 +74,8 @@ public class AdminIntegralGradeController {
             @ApiParam(value = "积分等级记录ID",required = true,example = "1")
             @PathVariable Integer id
     ){
+
+        log.info("adddsfdsfsfsfsfsf");
         IntegralGrade integralGrade = integralGradeService.getById(id);
         if (integralGrade == null) {
             return R.setR(ResponseEnum.QUERY_NO_DATA);
