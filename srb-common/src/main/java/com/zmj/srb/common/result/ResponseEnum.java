@@ -12,6 +12,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @ToString
 public enum ResponseEnum {
+    SUCCESS(20000, "成功"),//前端request.js里面判断成功是20000
 
     //-1xx 服务器错误
     BAD_SQL_GRAMMAR_ERROR(-101, "sql语法错误"),
@@ -21,7 +22,6 @@ public enum ResponseEnum {
 
 
     //-2xx 参数校验
-    SUCCESS(200, "成功"),
     BORROW_AMOUNT_NULL_ERROR(-201, "借款额度不能为空"),
     MOBILE_NULL_ERROR(-202, "手机号码不能为空"),
     MOBILE_ERROR(-203, "手机号码不正确"),

@@ -6,9 +6,7 @@
 D:\VSCodeWorkSpace\mytest\基础
 ```
 
-
-
-## 1.2 mybatis-plus
+## 1.2 后端mybatis-plus
 
 ```
 D:\ideaWorkSpace\ShangRongBaoS\mybatis-plus-demo
@@ -16,7 +14,7 @@ D:\ideaWorkSpace\ShangRongBaoS\mybatis-plus-demo
 
 
 
-# 2.srb系统
+# 2.srb后端系统
 
 ```bash
 D:\ideaWorkSpace\ShangRongBaoS\srb
@@ -49,14 +47,33 @@ swagger2访问地址:
 http://localhost:8110/swagger-ui.html
 ```
 
+
+
+# 3.srb-admin前端系统
+
+```bash
+#vscode打开 D:\VSCodeWorkSpace\srb-admin
+
+cd D:\VSCodeWorkSpace\srb-admin
+#安装NPM,运行一次就可以
+npm install
+```
+
+
+
+
+
 # 3.启动系统
 
-## 3.1 启动MySQL
+## 3.1 启动MySQL、Nginx
 
 ```bash
 输入 cmd
 按快捷键 Ctrl + Shift + Enter 进入管理员模式
 net start MySQL5.7.36
+D:
+cd D:\ideaWorkSpace\ShangRongBaoS\DevServer\nginx-1.18.0
+start nginx.exe
 ```
 
 ## 3.2 启动后端模块
@@ -65,4 +82,21 @@ net start MySQL5.7.36
 #service-core模块
 service-core/src/main/java/com/zmj/srb/core/ServiceCoreApplication.java
 ```
+
+## 3.3 启动前端模块
+
+```bash
+# .env.development文件中配置nginx地址
+VUE_APP_BASE_API = 'http://localhost'
+
+# mock-server.js修改原来的配置路径
+    //url: new RegExp(`${process.env.VUE_APP_BASE_API}${url}`),
+    url: new RegExp(`/dev-api${url}`),
+
+#根据package.json里面的"scripts":{"dev": "vue-cli-service serve"...
+npm run dev
+
+```
+
+
 

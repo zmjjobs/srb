@@ -11,7 +11,6 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -44,8 +43,8 @@ public class AdminIntegralGradeController {
     }
 
     @ApiOperation(value = "根据ID删除积分等级",notes = "逻辑删除")
-    @DeleteMapping("removeById/{id}")
-    public R removeById(
+    @DeleteMapping("remove/{id}")
+    public R remove(
             @ApiParam(value = "记录ID",example = "100",required = true)
             @PathVariable Integer id) {
         boolean b = integralGradeService.removeById(id);
@@ -74,8 +73,6 @@ public class AdminIntegralGradeController {
             @ApiParam(value = "积分等级记录ID",required = true,example = "1")
             @PathVariable Integer id
     ){
-
-        log.info("adddsfdsfsfsfsfsf");
         IntegralGrade integralGrade = integralGradeService.getById(id);
         if (integralGrade == null) {
             return R.setR(ResponseEnum.QUERY_NO_DATA);
